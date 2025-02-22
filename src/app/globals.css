@@ -21,3 +21,25 @@ body {
   background: var(--background);
   font-family: theme("fontFamily.poppins"), sans-serif;
 }
+
+@keyframes vibrate {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(5px);
+  }
+}
+
+.vibrate {
+  animation: vibrate 0.2s ease;
+}

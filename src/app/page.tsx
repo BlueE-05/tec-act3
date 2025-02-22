@@ -1,17 +1,18 @@
 'use client'
-import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 export default function Home() {
   const router = useRouter();
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    router.push("/rectangulo");
+    const paths = ["/rectangulo", "/contador-clicks"];
+    const randomPath = paths[Math.floor(Math.random() * paths.length)];
+
+    router.push(randomPath);
   };
 
   return (
     <main className="min-h-screen flex">
-      {/* Formulario en la mitad izquierda */}
       <div className="w-1/2 flex justify-center items-center p-8">
         <form onSubmit={handleSubmit} className="w-full max-w-md">
           <div className="mb-4">
@@ -48,7 +49,6 @@ export default function Home() {
         </form>
       </div>
 
-      {/* Rectángulo negro en la mitad derecha */}
       <div className="w-1/2 h-screen bg-black flex justify-center items-center text-white">
         <div className="relative w-40 h-40">
           <div className="w-full h-1/2 bg-white rounded-tl-full rounded-tr-full absolute"/>
