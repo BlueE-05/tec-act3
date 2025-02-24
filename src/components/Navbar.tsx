@@ -34,7 +34,7 @@ export default function Navbar() {
                             <span className="text-black font-medium">Welcome, {user.name}</span>
                         </div>
                     ) : (
-                        <Link className="text-black hover:text-stone-500 font-bold hover:drop-shadow-xl" href="/..">Sign Up</Link>
+                        <Link className="text-black hover:text-stone-500 font-bold hover:drop-shadow-xl" href="/">Sign Up</Link>
                     )}
                 </div>
             )}
